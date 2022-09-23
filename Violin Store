@@ -1,0 +1,25 @@
+CREATE TABLE Violin_store (id INTEGER PRIMARY KEY, item TEXT, category TEXT, quantity INTEGER, price integer, rating INTEGER);
+
+INSERT INTO violin_store VALUES (1, "Stradivari Copy", "Instrument", 5, 2750, 5);
+INSERT INTO violin_store VALUES (2, "Guaneri Copy", "Instrument", 6, 2800, 4.75);
+INSERT INTO violin_store VALUES (3, "Amati Copy", "Instrument", 3, 2500, 4.5);
+INSERT INTO violin_store VALUES (4, "Guadagnini Copy", "Instrument", 4, 2300, 4.75);
+INSERT INTO violin_store VALUES (5, "Pernabuco Bow", "Bows", 10, 1500, 5);
+INSERT INTO violin_store VALUES (6, "Baroque Pernabuco Bow", "Bows", 7, 350, 4);
+INSERT INTO violin_store VALUES (7, "Carbon Fiber Bow", "Bows", 9, 750, 4.5);
+INSERT INTO violin_store VALUES (8, "Jade Rosin", "Accessories", 15, 10, 3.75);
+INSERT INTO violin_store VALUES (9, "Bernardel Rosin", "Accessories", 12, 10, 4.5);
+INSERT INTO violin_store VALUES (10, "Sartory Rosin", "Accessories", 17, 20, 4.75);
+INSERT INTO violin_store VALUES (11, "Bon Musica Shoulder Rest", "Accessories", 8, 60, 5);
+INSERT INTO violin_store VALUES (12, "Kun Shoulder Rest", "Accessories", 10, 25, 4.75); 
+INSERT INTO violin_store VALUES (13, "Thomastick Dominant String Set", "Strings", 23, 55, 4.5);
+INSERT INTO violin_store VALUES (14, "Thomasstick Infeld Red String Set", "Strings", 27, 110, 4.75);
+INSERT INTO violin_store VALUES (15, "Piastro Evah Pirazzi Gold String Set", "Strings", 21, 100, 4.75); 
+INSERT INTO violin_store VALUES (16, "Bobelock Fiberglass Oblong Case", "Cases", 6, 350, 4.75);
+INSERT INTO violin_store VALUES (17, "BAM Peak performance compact Case", "cases", 9, 400, 4.5);
+INSERT INTO violin_store VALUES (18, "BAM Hightech oblong case", "Cases",  5, 1000, 5);
+
+SELECT * FROM Violin_store ORDER BY price;
+SELECT * FROM Violin_store WHERE price > 100 ORDER BY price;
+
+
