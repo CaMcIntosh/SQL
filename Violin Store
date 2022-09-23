@@ -15,10 +15,10 @@ INSERT INTO violin_store VALUES (10, "Sartory Rosin", "Accessories", 17, 20, 4.7
 INSERT INTO violin_store VALUES (11, "Bon Musica Shoulder Rest", "Accessories", 8, 60, 5);
 INSERT INTO violin_store VALUES (12, "Kun Shoulder Rest", "Accessories", 10, 25, 4.75); 
 INSERT INTO violin_store VALUES (13, "Thomastick Dominant String Set", "Strings", 23, 55, 4.5);
-INSERT INTO violin_store VALUES (14, "Thomasstick Infeld Red String Set", "Strings", 27, 110, 4.75);
+INSERT INTO violin_store VALUES (14, "Thomastick Infeld Red String Set", "Strings", 27, 110, 4.75);
 INSERT INTO violin_store VALUES (15, "Piastro Evah Pirazzi Gold String Set", "Strings", 21, 100, 4.75); 
 INSERT INTO violin_store VALUES (16, "Bobelock Fiberglass Oblong Case", "Cases", 6, 350, 4.75);
-INSERT INTO violin_store VALUES (17, "BAM Peak performance compact Case", "cases", 9, 400, 4.5);
+INSERT INTO violin_store VALUES (17, "BAM Peak performance compact Case", "Cases", 9, 400, 4.5);
 INSERT INTO violin_store VALUES (18, "BAM Hightech oblong case", "Cases",  5, 1000, 5);
 
 SELECT * FROM Violin_store ORDER BY price;
