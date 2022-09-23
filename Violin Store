@@ -1,3 +1,5 @@
+--Violin Store Database
+
 CREATE TABLE Violin_store (id INTEGER PRIMARY KEY, item TEXT, category TEXT, quantity INTEGER, price integer, rating INTEGER);
 
 INSERT INTO violin_store VALUES (1, "Stradivari Copy", "Instrument", 5, 2750, 5);
@@ -20,6 +22,6 @@ INSERT INTO violin_store VALUES (17, "BAM Peak performance compact Case", "cases
 INSERT INTO violin_store VALUES (18, "BAM Hightech oblong case", "Cases",  5, 1000, 5);
 
 SELECT * FROM Violin_store ORDER BY price;
-SELECT * FROM Violin_store WHERE price > 100 ORDER BY price;
+SELECT * FROM Violin_store WHERE rating > 4.5 ORDER BY rating;
 
 
