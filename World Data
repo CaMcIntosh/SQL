@@ -237,7 +237,7 @@ SELECT name, median_age,
     CASE
         WHEN median_age > 40 THEN "Middle Aged"
         WHEN median_age > 30 THEN "Young Professional"
-        When median_age > 20 THEN "College aged"
+        When median_age > 20 THEN "College Aged"
         Else "Minor"
     End as "Population_age_groups"
 From countries Order by Population_age_groups;
@@ -245,9 +245,10 @@ From countries Order by Population_age_groups;
 /*list of countries with a population over 50 million*/
 
 SELECT name, population FROM countries
-    group by name
-    Having population > 50000000
-    Order by Population;
+	SELECT name, population
+	FROM countries
+	WHERE population > 50000000
+	ORDER BY population;
     
 /*list of countries with a median population under 35 and fertility rate is greater than 3 sorted by median age*/
 
