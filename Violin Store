@@ -1,6 +1,13 @@
---Violin Store Database
+-- Violin Store Database (inventory, pricing, and ratings)
 
-CREATE TABLE Violin_store (id INTEGER PRIMARY KEY, item TEXT, category TEXT, quantity INTEGER, price integer, rating INTEGER);
+CREATE TABLE Violin_store (
+    id INTEGER PRIMARY KEY,
+    item TEXT,
+    category TEXT,
+    quantity INTEGER,
+    price INTEGER,
+    rating INTEGER
+);
 
 INSERT INTO violin_store VALUES (1, "Stradivari Copy", "Instrument", 5, 2750, 5);
 INSERT INTO violin_store VALUES (2, "Guaneri Copy", "Instrument", 6, 2800, 4.75);
@@ -13,15 +20,91 @@ INSERT INTO violin_store VALUES (8, "Jade Rosin", "Accessories", 15, 10, 3.75);
 INSERT INTO violin_store VALUES (9, "Bernardel Rosin", "Accessories", 12, 10, 4.5);
 INSERT INTO violin_store VALUES (10, "Sartory Rosin", "Accessories", 17, 20, 4.75);
 INSERT INTO violin_store VALUES (11, "Bon Musica Shoulder Rest", "Accessories", 8, 60, 5);
-INSERT INTO violin_store VALUES (12, "Kun Shoulder Rest", "Accessories", 10, 25, 4.75); 
+INSERT INTO violin_store VALUES (12, "Kun Shoulder Rest", "Accessories", 10, 25, 4.75);
 INSERT INTO violin_store VALUES (13, "Thomastick Dominant String Set", "Strings", 23, 55, 4.5);
 INSERT INTO violin_store VALUES (14, "Thomastick Infeld Red String Set", "Strings", 27, 110, 4.75);
-INSERT INTO violin_store VALUES (15, "Piastro Evah Pirazzi Gold String Set", "Strings", 21, 100, 4.75); 
+INSERT INTO violin_store VALUES (15, "Piastro Evah Pirazzi Gold String Set", "Strings", 21, 100, 4.75);
 INSERT INTO violin_store VALUES (16, "Bobelock Fiberglass Oblong Case", "Cases", 6, 350, 4.75);
 INSERT INTO violin_store VALUES (17, "BAM Peak performance compact Case", "Cases", 9, 400, 4.5);
-INSERT INTO violin_store VALUES (18, "BAM Hightech oblong case", "Cases",  5, 1000, 5);
+INSERT INTO violin_store VALUES (18, "BAM Hightech oblong case", "Cases", 5, 1000, 5);
 
-SELECT * FROM Violin_store ORDER BY price;
-SELECT * FROM Violin_store WHERE rating > 4.5 ORDER BY rating;
+-- Query 1: View full inventory sorted by price (lowest to highest)
 
+SELECT *
+FROM Violin_store
+ORDER BY price;
 
+-- Query 2: Items rated above 4.5, sorted by rating (highest first)
+
+SELECT *
+FROM Violin_store
+WHERE rating > 4.5
+ORDER BY rating DESC;
+
+-- Query 3: Inventory value per item (quantity * price) with an alias
+
+SELECT
+    item,
+    category,
+    quantity,
+    price,
+    (quantity * price) AS inventory_value
+FROM Violin_store
+ORDER BY inventory_value DESC;
+
+-- Query 4: Categorize price tiers using CASE (budget/mid/premium)
+
+SELECT
+    item,
+    category,
+    price,
+    CASE
+        WHEN price >= 1000 THEN 'Premium'
+        WHEN price BETWEEN 100 AND 999 THEN 'Mid-range'
+        ELSE 'Budget'
+    END AS price_tier
+FROM Violin_store
+ORDER BY category ASC, price DESC;
+
+-- Query 5: Show only selected categories using IN
+
+SELECT
+    item,
+    category,
+    price,
+    rating
+FROM Violin_store
+WHERE category IN ('Instrument', 'Bows')
+ORDER BY category ASC, price DESC;
+
+-- Query 6: Category summary (count of items, total quantity, avg rating)
+
+SELECT
+    category,
+    COUNT(*) AS item_count,
+    SUM(quantity) AS total_units,
+    AVG(rating) AS avg_rating
+FROM Violin_store
+GROUP BY category
+ORDER BY category ASC;
+
+-- Query 7: Categories with strong reviews (HAVING avg rating >= 4.6)
+
+SELECT
+    category,
+    AVG(rating) AS avg_rating
+FROM Violin_store
+GROUP BY category
+HAVING AVG(rating) >= 4.6
+ORDER BY avg_rating DESC;
+
+-- Query 8: Low-stock items (quantity <= 6) excluding Accessories (NOT IN)
+
+SELECT
+    item,
+    category,
+    quantity
+FROM Violin_store
+WHERE quantity <= 6
+  AND category NOT IN ('Accessories')
+ORDER BY quantity ASC, item ASC;
