@@ -1,10 +1,14 @@
 # SQL Portfolio
 
-This repository contains SQL analysis projects built using SQLite-style syntax.
-Each project includes table creation, sample data, and analytical queries
-demonstrating filtering, aggregation, CASE expressions, and business logic.
+Welcome! This repository contains a series of SQL projects focused on analytics, querying, and data exploration.
 
-## Projects
-- Fortune 500 Analysis: Corporate workforce and benefits analysis
-- Violin Store: Inventory, pricing, and product rating analysis
-- World Data: Global population, growth, and demographic analysis
+## 📁 Projects
+
+- **Fortune 500 Analysis** — Company-level KPIs, filtering, categorization, and industry aggregation.
+- **Violin Store Inventory** — Pricing, categorization, inventory valuation, and ratings analysis.
+- **World Data Exploration** — Demographics, population change, fertility, migration, and global metrics.
+
+Each project includes:
+- Database schema
+- Data inserts (for reproducibility)
+- SQL queries
