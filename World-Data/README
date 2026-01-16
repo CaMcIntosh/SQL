@@ -1,1 +1,51 @@
-#World Data
+# World Data Exploration
+
+SQL analysis of country-level demographic datasets to examine global population dynamics, fertility, age distribution, and migration patterns.
+
+## Dataset Description
+
+Fields used in this dataset include:
+
+- country — country name
+- region — geographic classification
+- population — total population
+- population_growth — annual growth rate (percentage)
+- fertility_rate — births per woman
+- median_age — median age of population
+- net_migration — net migration rate
+
+Regions include Africa, Asia, Europe, North America, South America, and Oceania.
+
+## Analysis Objectives
+
+Sample analytical questions explored:
+
+- Which regions have the youngest versus oldest population structures?
+- How do fertility rates vary across regions and income levels?
+- Which countries exhibit high population growth compared to global averages?
+- How does net migration correlate with demographic factors?
+- What regions display overall population concentration?
+
+## SQL Concepts Demonstrated
+
+This project includes:
+
+- ORDER BY sorting
+- WHERE filtering
+- CASE expressions for demographic categorization
+- GROUP BY with aggregation
+- HAVING for filtered summaries
+- Calculated fields for rate comparisons
+
+## Example Insights
+
+From the queries, we observe patterns such as:
+
+- Africa and parts of Asia having higher fertility and growth rates.
+- Europe and Oceania presenting older median ages and lower fertility.
+- Net migration trends differing sharply across regions and income groups.
+- Regional aggregation highlighting demographic concentration and diversity.
+
+## Tools Used
+
+- SQL (SQLite-style syntax)
