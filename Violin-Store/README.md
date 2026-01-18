@@ -24,7 +24,7 @@ Sample business questions explored:
 - Which categories require restocking based on low inventory?
 - How do categories compare in terms of total units and average ratings?
 
-## SQL Concepts Demonstrated
+## SQL Techniques Applied
 
 This project includes:
 
