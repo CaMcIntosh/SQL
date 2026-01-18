@@ -27,7 +27,7 @@ Sample business questions explored:
 - Which industries show higher retention through average tenure?
 - Which non-healthcare companies lack healthcare benefits?
 
-## SQL Concepts Demonstrated
+## SQL Techniques Applied
 
 This project includes:
 
