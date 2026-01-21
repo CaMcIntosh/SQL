@@ -101,7 +101,7 @@ JOIN vips AS b
  AND a.member_id < b.member_id
 ORDER BY vip_a_last_name, vip_b_last_name;
 
---Subquery 
+--Subquery
 --8. Which VIPs are assigned to give feedback to someone who is presenting a Keynote, and who is the keynote presenter they’re assigned to review?
 
 SELECT
@@ -116,6 +116,13 @@ JOIN vips AS recipient
   ON reviewer.provides_feedback_to = recipient.member_id
 JOIN events AS e
   ON recipient.event = e.event_id
-WHERE e.event_type = 'Keynote'
+WHERE recipient.member_id IN (
+  SELECT v.member_id
+  FROM vips v
+  JOIN events e2
+    ON v.event = e2.event_id
+  WHERE e2.event_type = 'Keynote'
+)
 ORDER BY reviewer.last_name, reviewer.first_name;
+
 	
