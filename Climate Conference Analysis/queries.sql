@@ -1,5 +1,5 @@
 -- LEFT JOIN 
---1. Which VIPs have not made a hotel reservation yet, and what are the reservation fields for those who have?
+--1. Which VIPs have not made a hotel reservation yet?
 
 SELECT
 	vips.last_name,
@@ -13,7 +13,7 @@ FROM vips
 	WHERE reservations.member_id IS NULL
 	ORDER BY vips.last_name ASC;
 
---2. List every VIP and the name/type of the event they’re presenting at (if any). Include VIPs even if they aren’t presenting.
+--2. List every VIP and the name/type of the event they’re presenting at (if any).
 
 SELECT
 	vips.last_name,
@@ -26,7 +26,7 @@ FROM vips
 	ORDER BY vips.last_name ASC;
 
 --INNER JOIN 
---3. Which VIPs have confirmed (“yes”) for the welcome party, and what hotel are they staying at?
+--3. Which VIPs have confirmed “yes” for the welcome party, and what hotel are they staying at?
 
 SELECT
 	vips.last_name,
@@ -41,7 +41,7 @@ FROM vips
 	ORDER BY hotels.hotel_name;
 	
 --Multiple JOINs in one query
---4. For each VIP, show their name + event name/type + hotel name/address + RSVP status for both welcome and dinner.
+--4. For each VIP, show their name, event name/type (if any), hotel name/address (if any), and their welcome and dinner RSVP statuses (if any).
 
 SELECT
 	vips.last_name,
@@ -61,7 +61,7 @@ FROM vips
 			ON reservations.hotel = hotels.hotel_id
 	ORDER By vips.last_name;
 
---5. Which hotels have VIPs attending the thank-you dinner, and how many VIPs per hotel?
+--5. For VIPs who have confirmed “yes” for the thank-you dinner, how many VIPs are staying at each hotel?
 
 SELECT
 	hotels.hotel_name,
@@ -76,7 +76,7 @@ GROUP BY hotels.hotel_name
 ORDER BY hotels.hotel_name;				
 
 --SELF JOIN 
---6. Who is giving feedback to whom? Return “Reviewer VIP name → Recipient VIP name”.
+--6. Who is assigned to give feedback to whom (Reviewer → Recipient)?
 
 SELECT
   reviewer.first_name  AS reviewer_first_name,
@@ -87,7 +87,7 @@ FROM vips AS reviewer
 JOIN vips AS recipient
   ON reviewer.provides_feedback_to = recipient.member_id;
 	
---7. Find any “feedback chain” pairs.
+--7. Are there any pairs of VIPs where each person is assigned to give feedback to the other (A → B and B → A)? If so, which pairs?
 
 SELECT
   a.first_name AS vip_a_first_name,
@@ -102,7 +102,7 @@ JOIN vips AS b
 ORDER BY vip_a_last_name, vip_b_last_name;
 
 --Subquery 
---8. Which VIPs are assigned to give feedback to someone who is presenting a keynote?
+--8. Which VIPs are assigned to give feedback to someone who is presenting a Keynote, and who is the keynote presenter they’re assigned to review?
 
 SELECT
   reviewer.first_name AS reviewer_first_name,
