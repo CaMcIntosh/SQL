@@ -10,7 +10,7 @@ The dataset includes:
 - Hotel reservations and RSVPs
 - Peer feedback assignments between VIPs
 
-The goal of this project is to demonstrate practical SQL skills, particularly **JOINs, self-joins, and aggregation**, using realistic business questions.
+The purpose of this project is to demonstrate practical SQL skills using realistic business questions rather than toy examples.
 
 ---
 
@@ -22,22 +22,22 @@ The database consists of four tables:
 - **events** – Conference sessions (keynotes, panels, workshops)  
 - **hotels** – Hotel details for VIP accommodations  
 
-The schema is defined in `schema.sql`.
+The schema and seed data are defined in `schema.sql`.
 
 ---
 
 ## Queries Included
-All queries are documented in `queries.sql`. Each query is preceded by the question it answers.
+All queries are documented in `queries.sql`. Each query is preceded by the business question it answers.
 
-### Query topics include:
-1. Identifying VIPs without hotel reservations (LEFT JOIN + NULL filtering)
-2. Listing all VIPs and their event participation (LEFT JOIN)
-3. Finding confirmed welcome party attendees and their hotels (INNER JOIN)
-4. Producing a full VIP status roster using multiple LEFT JOINs
-5. Counting VIPs attending the thank-you dinner by hotel (aggregation with COUNT and GROUP BY)
-6. Mapping feedback assignments using a self-join
-7. Detecting reciprocal (two-way) feedback relationships
-8. Identifying reviewers assigned to keynote presenters
+The queries address scenarios such as:
+- Identifying VIPs without hotel reservations (LEFT JOIN + NULL filtering)
+- Listing all VIPs and their event participation, including non-presenters
+- Finding confirmed welcome party attendees and their hotel assignments
+- Producing a full VIP status roster using multiple LEFT JOINs
+- Counting VIPs attending the thank-you dinner by hotel (aggregation)
+- Mapping feedback assignments using self-joins
+- Detecting reciprocal (two-way) feedback relationships
+- Identifying reviewers assigned to keynote presenters
 
 ---
 
@@ -47,23 +47,11 @@ All queries are documented in `queries.sql`. Each query is preceded by the quest
 - Self-joins to model relationships within a single table
 - Aggregation using COUNT and GROUP BY
 - Translating real-world questions into SQL logic
-- Producing human-readable, stakeholder-friendly query outputs
-
----
-
-## How to Use
-1. Run `schema.sql` to create and populate the database
-2. Execute queries from `queries.sql` individually
-3. Review results to understand how different join strategies affect output
+- Designing query outputs for clarity and stakeholder readability
 
 ---
 
 ## Notes
 - Some queries intentionally return empty result sets to reflect real data conditions (e.g., no reciprocal feedback chains).
-- The focus of this project is correctness and clarity, not optimization.
+- The emphasis is on correctness, clarity, and reasoning rather than query optimization.
 
----
-
-## Author
-Carrie McIntosh  
-SQL Certificate – Part 3  
