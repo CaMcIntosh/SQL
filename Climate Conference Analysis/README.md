@@ -1,57 +1,42 @@
-# Conference VIP Management
+# Conference VIP Management Analysis
 
-## Project Overview
-This project simulates managing VIP logistics for a climate research conference with hundreds of attendees.  
-The focus is on querying relational data to support real-world operational questions such as reservations, event participation, feedback assignments, and attendance counts.
+Analysis of VIP logistics and participation for a climate research conference, focusing on event participation, hotel reservations, RSVP status, and peer feedback assignments using SQL.
 
-The dataset includes:
-- VIP profiles
-- Event presentations
-- Hotel reservations and RSVPs
-- Peer feedback assignments between VIPs
+## Dataset Description
 
-The purpose of this project is to demonstrate practical SQL skills using realistic business questions rather than toy examples.
+Fields included across the dataset:
 
----
+**vips**
+- member_id — unique VIP identifier
+- first_name — first name
+- last_name — last name
+- association — affiliated organization
+- assoc_type — organization type (education, government, private, research)
+- member_since — year joined the organization
+- event — event being presented (if any)
+- provides_feedback_to — assigned peer feedback recipient
 
-## Database Schema
-The database consists of four tables:
+**reservations**
+- member_id — VIP identifier
+- hotel — hotel assignment
+- welcome_rsvp — welcome party RSVP (1 = yes, 0 = no)
+- dinner_rsvp — thank-you dinner RSVP (1 = yes, 0 = no)
 
-- **vips** – VIP identity, affiliation, event participation, and feedback assignments  
-- **reservations** – Hotel bookings and RSVP status for conference events  
-- **events** – Conference sessions (keynotes, panels, workshops)  
-- **hotels** – Hotel details for VIP accommodations  
+**events**
+- event_id — unique event identifier
+- event_name — event title
+- event_type — session type (Keynote, Panel, Workshop)
 
-The schema and seed data are defined in `schema.sql`.
+**hotels**
+- hotel_id — unique hotel identifier
+- hotel_name — hotel name
+- address — hotel address
 
----
+## Analysis Objectives
 
-## Queries Included
-All queries are documented in `queries.sql`. Each query is preceded by the business question it answers.
+Sample business questions explored:
 
-The queries address scenarios such as:
-- Identifying VIPs without hotel reservations (LEFT JOIN + NULL filtering)
-- Listing all VIPs and their event participation, including non-presenters
-- Finding confirmed welcome party attendees and their hotel assignments
-- Producing a full VIP status roster using multiple LEFT JOINs
-- Counting VIPs attending the thank-you dinner by hotel (aggregation)
-- Mapping feedback assignments using self-joins
-- Detecting reciprocal (two-way) feedback relationships
-- Identifying reviewers assigned to keynote presenters
-
----
-
-## Skills Demonstrated
-- LEFT JOIN vs INNER JOIN decision-making
-- Multi-table join paths using bridge tables
-- Self-joins to model relationships within a single table
-- Aggregation using COUNT and GROUP BY
-- Translating real-world questions into SQL logic
-- Designing query outputs for clarity and stakeholder readability
-
----
-
-## Notes
-- Some queries intentionally return empty result sets to reflect real data conditions (e.g., no reciprocal feedback chains).
-- The emphasis is on correctness, clarity, and reasoning rather than query optimization.
-
+- Which VIPs have not yet made hotel reservations?
+- Which VIPs are presenting, and what type of event are they presenting?
+- Which VIPs have confirmed attendance for conference events?
+- What is the full
