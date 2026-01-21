@@ -1,4 +1,4 @@
-# Conference VIP Management – SQL Joins & Aggregation Practice
+# Conference VIP Management
 
 ## Project Overview
 This project simulates managing VIP logistics for a climate research conference with hundreds of attendees.  
