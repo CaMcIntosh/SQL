@@ -2,10 +2,10 @@
 --How many many unique orders were placed in January? In other words, how many distinct order ids do we have?
 
 SELECT
-	DISTINCT orderID
+	COUNT (DISTINCT orderID)
 FROM JanSales
 WHERE length(orderID)=6
-AND orderID <> 'order ID';
+AND orderID <> 'Order ID';
 
 --Question #2
 --How many of those orders were for an iPhone?
@@ -15,27 +15,30 @@ SELECT
 FROM JanSales
 WHERE PRODUCT = 'iPhone'
 	AND length(orderID) = 6
-	AND orderID <> 'order ID';
+	AND orderID <> 'Order ID';
 	
 --Question #3
 --Select the customer account numbers for all the orders that were placed in February.
 
 SELECT 
-	DISTINCT acctnum
+	DISTINCT cust.acctnum
 FROM customers cust
-	INNER JOIN BIT.FebSales feb
+	INNER JOIN FebSales feb
 		ON cust.order_id = feb.orderID
 WHERE length(orderID) =6
-AND orderID <> 'order ID';
+AND orderID <> 'Order ID';
 
 --Question #4
 --Which product was the cheapest one sold in January, and what was the price?
 
 SELECT
-	DISTINCT Product,
-	price
+	product,
+	MIN(price) AS price
 FROM JanSales
-ORDER BY price ASC 
+WHERE product <> 'Product'
+	AND price > 0
+GROUP BY product
+ORDER BY price ASC
 LIMIT 1;
 
 --Question #5
@@ -55,12 +58,13 @@ ORDER BY revenue ASC;
 --Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
 
 SELECT
-    SUM(Quantity),
-    Product,
-    SUM (Quantity * price) AS revenue
+  Product,
+  SUM(Quantity) AS qty_sold,
+  SUM(Quantity * price) AS revenue
 FROM FebSales
 WHERE location = '548 Lincoln St, Seattle, WA 98101'
-GROUP BY Product;
+GROUP BY Product
+ORDER BY revenue ASC;
 
 --Question #7
 --How many customers ordered more than 2 products at a time in February, and what was the average amount spent for those customers?
