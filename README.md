@@ -1,14 +1,17 @@
 # SQL Portfolio
 
-Welcome! This repository contains a series of SQL projects focused on analytics, querying, and data exploration.
+A collection of SQL analytics projects demonstrating data exploration,
+aggregation, joins, and business-focused analysis across multiple datasets.
 
-## 📁 Projects
+## Projects
 
-- **Fortune 500 Analysis** — Company-level KPIs, filtering, categorization, and industry aggregation.
-- **Violin Store Inventory** — Pricing, categorization, inventory valuation, and ratings analysis.
-- **World Data Exploration** — Demographics, population change, fertility, migration, and global metrics.
+- **Climate Conference Analysis** — Event and participation analytics  
+- **Fortune 500 Analysis** — Corporate performance and ranking trends  
+- **Violin Store** — Retail sales and customer behavior analysis  
+- **World Data** — Global demographic and population analytics  
+- **Customer Order & Analytics** — Multi-month retail order and revenue analysis  
 
-Each project includes:
-- Database schema
-- Data inserts (for reproducibility)
-- SQL queries
+Each project folder contains:
+- `schema.sql` — database structure
+- `queries.sql` — analytical queries
+- `README.md` — project overview
