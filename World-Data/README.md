@@ -1,51 +1,51 @@
-# World Data Exploration
+# World Data Demographic Analysis
 
-SQL analysis of country-level demographic datasets to examine global population dynamics, fertility, age distribution, and migration patterns.
+Exploratory SQL analysis of country-level demographic data examining global population distribution, growth trends, fertility, age structure, and migration patterns.
 
 ## Dataset Description
 
-Fields used in this dataset include:
+This dataset contains country-level demographic indicators used to analyze population dynamics across geographic regions.
 
-- country — country name
-- region — geographic classification
-- population — total population
-- population_growth — annual growth rate (percentage)
-- fertility_rate — births per woman
-- median_age — median age of population
-- net_migration — net migration rate
+Key fields include:
 
-Regions include Africa, Asia, Europe, North America, South America, and Oceania.
+- country — country name  
+- region — geographic classification (Africa, Asia, Europe, North America, South America, Oceania)  
+- population — total population  
+- population_growth — annual population growth rate (percentage)  
+- fertility_rate — average number of births per woman  
+- median_age — median age of the population  
+- net_migration — net migration rate  
 
 ## Analysis Objectives
 
-Sample analytical questions explored:
+This project explores high-level demographic questions such as:
 
-- Which regions have the youngest versus oldest population structures?
-- How do fertility rates vary across regions and income levels?
-- Which countries exhibit high population growth compared to global averages?
-- How does net migration correlate with demographic factors?
-- What regions display overall population concentration?
+- How do population size and growth vary across global regions?
+- Which countries exhibit high fertility and young population structures?
+- Which regions tend toward aging populations and lower growth?
+- How does net migration differ by region and demographic profile?
+- How are countries distributed across population size tiers?
 
 ## SQL Techniques Applied
 
-This project includes:
+This analysis demonstrates the use of:
 
-- ORDER BY sorting
-- WHERE filtering
-- CASE expressions for demographic categorization
-- GROUP BY with aggregation
-- HAVING for filtered summaries
-- Calculated fields for rate comparisons
+- Multi-condition filtering with `WHERE`
+- Sorting and ranking with `ORDER BY` and `LIMIT`
+- `CASE` expressions for demographic categorization
+- Aggregations using `GROUP BY`
+- Filtered summaries using `HAVING`
+- Calculated fields for projections and comparisons
 
 ## Example Insights
 
-From the queries, we observe patterns such as:
+Key observations from the analysis include:
 
-- Africa and parts of Asia having higher fertility and growth rates.
-- Europe and Oceania presenting older median ages and lower fertility.
-- Net migration trends differing sharply across regions and income groups.
-- Regional aggregation highlighting demographic concentration and diversity.
+- Countries with younger median ages tend to exhibit higher fertility and growth rates.
+- Regions such as Europe and Oceania display older population profiles and slower growth.
+- Net migration patterns vary significantly across regions, reflecting economic and demographic pressures.
+- Grouping countries into population tiers highlights demographic concentration and regional diversity.
 
 ## Tools Used
 
-- SQL (SQLite-style syntax)
+- SQL (SQLite)
