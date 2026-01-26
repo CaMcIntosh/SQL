@@ -1,31 +1,46 @@
 # SQL Portfolio
 
-A collection of SQL analytics projects demonstrating relational database analysis, data exploration, aggregations, and business-focused querying across multiple datasets.
+A curated collection of SQL analytics projects demonstrating relational database analysis, data exploration, aggregation, and business-focused querying.  
+This portfolio emphasizes projects that reflect practical analytics use cases, including sales performance, customer behavior, and operational analysis.
 
-## Projects
+## Featured Projects
 
-- **Chinook SQL Analysis** — Sales performance, customer behavior, and sales agent contribution analysis using a normalized music store database  
-- **Climate Conference Analysis** — Event logistics, VIP participation, and operational analytics  
-- **Fortune 500 Analysis** — Corporate performance, rankings, and comparative trends  
-- **Violin Store** — Retail sales, product performance, and customer purchasing behavior  
-- **World Data** — Global demographic, population, and comparative country analysis  
-- **Customer Order & Analytics** — Multi-period retail order and revenue analysis  
+- **Chinook SQL Analysis**  
+  Sales performance, customer behavior, and sales agent contribution analysis using a normalized digital music store database.
+
+- **Climate Conference Analysis**  
+  Event logistics, VIP participation, and operational reporting for a multi-day conference dataset.
+
+- **Customer Order & Analytics**  
+  Multi-period retail order analysis focusing on revenue, order volume, and customer purchasing patterns.
+
+- **Fortune 500 Analysis**  
+  Comparative analysis of Fortune 500 companies examining rankings, industry trends, and aggregate metrics.
+
+## Additional Exploratory Projects
+
+- **World Data Demographic Analysis**  
+  Exploratory analysis of global population, fertility, age structure, and migration trends.
+
+- **Violin Store Inventory Analysis**  
+  Inventory-focused retail analysis examining pricing tiers, stock levels, and product ratings.
 
 ## Repository Structure
 
 Each project folder contains:
 - `schema.sql` — database structure and table relationships  
 - `queries.sql` — analytical SQL queries answering business questions  
-- `README.md` — project overview, dataset description, and objectives  
+- `README.md` — project overview, dataset description, and analysis objectives  
 
 ## Skills Demonstrated
 
 - SQL (SQLite)
 - Multi-table joins
 - Aggregations (`SUM`, `COUNT`, `AVG`)
+- CASE expressions
 - Date-based filtering
 - Relational data analysis
 
 ---
 
-This portfolio reflects practical SQL usage for analytics, reporting, and data-driven decision support.
+This portfolio reflects hands-on SQL experience applied to real-world analytics and reporting scenarios.
